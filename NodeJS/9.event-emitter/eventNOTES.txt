@@ -1,0 +1,29 @@
+The Node.js Event emitter
+
+If you worked with JavaScript in the browser, you know how much of the interaction of the user is handled through events: mouse clicks, keyboard button presses, reacting to mouse movements,and so on.
+
+On the backend side, Node.js offers us the option to build a similar system using the events module.
+This module, in particular, offers the EventEmitter class, which we'll use to handle our events.
+
+########
+
+An Event Emitter is a mechanism that allows objects to emit (fire) events and other parts of the code to listen and respond to those events.
+
+==> used mostly in node.js not in browser js
+
+#emit() → fires the event
+#on() → listens to the event
+
+
+
+❌ No. Event Emitters are NOT like threads.
+
+Correct conclusion (1 line):
+
+Event Emitters are a communication mechanism, not parallel execution like threads.
+
+Why (super short):
+
+Threads → run code in parallel
+
+Event Emitters → signal events and run listeners one by one on the same single thread
