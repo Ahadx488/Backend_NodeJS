@@ -1,0 +1,55 @@
+What is npm?
+
+npm stands for Node Package Manager. It’s the default tool used with Node.js to:
+
+📦 Install libraries (packages)
+
+🧰 Manage project dependencies
+
+▶️ Run scripts (like starting servers or building apps)
+
+==========================
+
+## The 3 main parts of npm
+
+1️⃣ npm Registry
+
+=> A huge online database with millions of JavaScript packages
+
+Examples:
+    react – UI library
+    express – backend framework
+    lodash – utility helpers
+
+Anyone can publish packages, and anyone can use them.
+
+2️⃣ npm CLI (the command-line tool)
+
+This is what you actually type in the terminal.
+It downloads packages, updates files, and runs scripts.
+
+3️⃣ package.json (the brain of your project 🧠)
+
+    Every npm project has a package.json file. It tells npm:
+
+        ->Project name & version
+        ->Which packages you depend on
+        ->Scripts you can run
+
+Why npm matters
+    ->Without npm, you’d have to:
+    ->Manually download libraries
+    ->Track versions by hand
+    ->Share dependencies manually
+
+    npm makes JavaScript development scalable and sane.
+
+========= IMP ========
+
+npm dependencies are divided into two types:
+
+dependencies: Packages required for the application to run in production (e.g., frameworks and runtime libraries).
+
+devDependencies: Packages needed only during development, such as testing tools, linters, and build tools.
+
+Using npm simplifies JavaScript development by handling dependency management, version control, and project consistency across different environments.

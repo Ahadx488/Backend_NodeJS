@@ -1,0 +1,72 @@
+<!-- XMLHttpRequest readyState – Notes
+
+The readyState property of an XMLHttpRequest object represents the current state of the HTTP request. It helps track the progress of a request from creation to completion. An XHR object moves through five states, numbered from 0 to 4, as the request is processed.
+
+When readyState is 0 (UNSENT), the XHR object has been created but the open() method has not been called yet. At this stage, no request has been initialized.
+
+When readyState is 1 (OPENED), the open() method has been called. The request has been configured, but send() has not been executed yet. The connection is not established at this point.
+
+When readyState is 2 (HEADERS_RECEIVED), the send() method has been called and the request has reached the server. The response headers and HTTP status code are now available, but the response body has not been fully received.
+
+When readyState is 3 (LOADING), the response body is being downloaded. The responseText contains partial data, meaning the full response has not arrived yet.
+
+When readyState is 4 (DONE), the request operation is complete. The full response has been received, and the data is now available for processing. This is the state where the response is usually handled.
+
+readyState indicates the lifecycle stage of an XMLHttpRequest, from request creation (0) to completion (4).
+ -->
+
+<!-- == AJAX-> asynchronous JS and XML == -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/Ahadx488'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL)  //requestURL ke jagah direct link bhi paste kar sakte hai 'link', lekin it is a good coding practice.
+    xhr.onreadystatechange = function (){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            //const data = this.responseText // ab next step me hum isko JSON me convert kar denge
+
+            //console.log(data.followers) // o/p ->undefined: data string ke form me aata hai aur hum usko object ki tarah treat kar rahe hai.
+            // us data to kon hum JSON me convert kar denge
+
+            const data =  JSON.parse(this.responseText)
+            console.log(data.id) // 207406329
+            console.log(data.login) // Ahadx488
+            console.log(data.followers) // 0
+            console.log( typeof data) // Object
+
+            // console.log is wrapper ; it's code in  written in low level langs
+
+            // console.log() is a JavaScript function that internally calls native (engine / environment)   code written in lower-level languages like C++ (or similar).
+
+            // Why this is true (simple explanation)
+
+            // JavaScript itself cannot print to screen / terminal.
+
+            // So:
+
+            // console.log is not pure JavaScript
+
+            // It is provided by the runtime environment:
+
+            // Browser → DevTools / browser engine
+
+            // Node.js → V8 + libuv
+
+
+        }
+    }
+    xhr.send()
+
+</script>
+</html>
