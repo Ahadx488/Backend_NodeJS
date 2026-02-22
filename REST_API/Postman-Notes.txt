@@ -1,0 +1,23 @@
+# Postman – Concept and Purpose
+
+Postman is an API testing tool used by developers to send HTTP requests to a server and analyze the responses. It acts as a client similar to a browser but is designed specifically for backend development and testing. Postman helps developers test APIs without needing a frontend application.
+
+# Role of Postman in Client–Server Architecture
+
+In client–server communication, Postman works as a client that sends requests directly to the server and receives responses. Browsers and Postman both communicate with servers independently; browsers do not use Postman internally. Postman is mainly used during development and debugging, while browsers are used by end users.
+
+# Why Servers Must Be Running
+
+Postman can receive responses only when the backend server is running. When a developer stops the server (for example, stopping a Node.js process), Postman requests fail because there is no active server to handle them. In real-world applications, servers are hosted on cloud or data centers and run 24×7 to ensure continuous availability.
+
+# Difference Between Browser and Postman
+
+Browsers are designed to render HTML, CSS, and JavaScript for users, whereas Postman is designed to test APIs. Browsers mainly handle GET requests easily, while Postman supports all HTTP methods such as GET, POST, PUT, PATCH, and DELETE. Postman allows direct control over request bodies, headers, and authentication, which is difficult to do using a browser alone.
+
+# Advantages of Postman for Developers
+
+Postman allows developers to send JSON and raw data, set custom headers, test authentication mechanisms like JWT and API keys, and view complete response details including status codes and headers. It is especially useful for backend-first development where the frontend is not yet available. Postman also supports collections, environments, and automated testing, making it suitable for team collaboration and API debugging.
+
+# When to Use Postman
+
+Postman is used during backend development, API testing, and debugging. It helps developers verify server logic, validate responses, and test protected routes. Once APIs are stable, browsers are used to test the frontend and final user experience.
